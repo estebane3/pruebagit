@@ -13,12 +13,15 @@ function mostrar()
     descuento=prompt("descuento");
     descuento=parseInt(descuento)
 
-    
-    
-    
     preciofinal=document.getElementById("elPrecioFinal").value;
+    
+    preciofinal=parseInt(preciofinal)
+    
+    
+    preciofinal=precio+descuento
+    
    
    
-    preciofinal=precio descuento
+    
    
 }
