@@ -10,11 +10,14 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
+
     var lamparabajoconsumo
     var descuento
     var precio
     var marca
 
+
+    precio=35
 
      lamparabajoconsumo=document.getElementById("Cantidad")
 
@@ -22,11 +25,16 @@ function CalcularPrecio ()
      descuento=parseInt(descuento)
      precio=parseInt(precio)
 
-     precio=35
+     
 
+    
      descuento=precio*50/(100)
 
      if(lamparabajoconsumo>=6)
+
+
+
+     
      
 
 
