@@ -34,30 +34,23 @@ function verificar()
 	console.log(numeroingresado)
   
 	if(numeroingresado==numeroSecreto)
-	{
-	  if(contadorIntentos<4)
-	  {
-		alert("genio");
-	  } 
-	  else
-	  {
-		alert("pura suerte");
-	  }
-	}
-	else
-	{
-  
-	  if(numeroingresado>numeroSecreto)
-	  {
-		  alert("se pasó")
-	  }
-	  else
-	  {
-		
-		  alert("te falta");
-	  }
+		switch(numeroingresado)
+		{
+
+			
+		}
+
+
+	
+	
+	
 	  
-	  }
+	  
+	  
+		
+		
+		document.getElementById("intentos").value=contadorIntentos;
+		
 	
 
 }
