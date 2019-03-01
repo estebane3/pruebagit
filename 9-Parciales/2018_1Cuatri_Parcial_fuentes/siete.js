@@ -4,17 +4,17 @@ function mostrar()
     var cantidaddenotas
     var sexo;
     var promedionotas;
-    var respuestas;
-    var varonesaprobados
+    var cantidaddealumnos;
+    var varonesaprobados;
 
     notas=0
     sexo= "femenino","masculino"
     promedionotas=0
     cantidaddenotas=0
     varonesaprobados=0
-   
+    cantidaddealumnos=0
 
-    while(respuestas !="no")
+    while(cantidaddealumnos<5)
     {
         notas=prompt("ingrese notas");
         sexo=prompt("ingresar el sexo ");
@@ -32,16 +32,14 @@ function mostrar()
         }
         if(cantidaddenotas>=6)
         {
-            cantidaddenotas=1
+            cantidaddenotas=cantidaddenotas+1
         }
 
-		respuestas=prompt("ingrese no para salir");
-
-
+        cantidaddealumnos=cantidaddealumnos+1
     }
     promedionotas=notas/cantidaddenotas
  
     alert("el promedio de las notas es " +promedionotas)
     alert("la nota mas baja es " +notas+ " y su sexo es " +sexo)
-    alert("cantidad de varones aprobados" +varonesaprobados)
+    alert("cantidad de varones aprobados " +varonesaprobados)
 }

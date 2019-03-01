@@ -31,7 +31,7 @@ function mostrar()
 		{
 			break;
 		}
-		contadordealumnos=++
+		contadordealumnos++
 	}
 	if(contadordealumnos==100)
 	{
