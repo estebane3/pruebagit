@@ -56,7 +56,7 @@ function mostrar()
 	
 		promediopositivos=numeropositivo/cantidaddepositivos
 		promedionegativos=numeronegativo/cantidaddenegativos
-		diferenciaposneg=numeropositivo+numeronegativo
+		diferenciaposneg=numeropositivo-numeronegativo
 
 
 console.log("la suma de negativos es " +numeronegativo)
