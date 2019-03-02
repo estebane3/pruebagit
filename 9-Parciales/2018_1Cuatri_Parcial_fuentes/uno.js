@@ -1,19 +1,27 @@
 
 function mostrar()
+//Bienvenidos Realizar el algoritmo que pida el ancho y el largo de un rectángulo por prompt y que muestre el perímetro por alert.
 {
-    var ancho
-    var largo
-    var sumar
+    var ancho;
+    var largo;
+    var perimetro;
     
-    ancho=prompt("ancho")
-    largo=prompt("largo")
+    ancho=prompt("ingrese el ancho");
+    largo=prompt("ingrese el largo");
     
-    ancho=parseInt(ancho)
-    largo=parseInt(largo)
+    largo=parseInt(largo);
+    ancho=parseInt(ancho);
 
-    sumar=2*ancho+2*largo 
+    perimetro=2*(ancho+largo);
+
+
+    alert("perimetro es igual a " +perimetro);
+
+
+
+
+
     
 
-    alert("el perimetro es "+sumar)
 
 }
