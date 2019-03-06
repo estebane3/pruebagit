@@ -1,72 +1,83 @@
 function mostrar()
 {
     var velocidadkm;
-    var tipocombustible;
-    var cantidaddeautos;
-    var promediototal;
-    var velocidadmasbaja;
+    var tipo_combustible;
+    var vehiculos;
+    var sumadevelocidades;
+    var promedio;
+    var bandera;
+    var velocidad_baja;
+    var combustiblemin;
+    var contador_combustible;
     var velocidadalta;
-    var bandera
-    var velocidadmas100
 
+    velocidadalta=0
+    contador_combustible=0
+    velocidad_baja=0;
+    combustiblemin=0
+    bandera=0;
+    sumadevelocidades=0;
     velocidadkm=0;
-    cantidaddeautos=0;
-    velocidadmasbaja=0
-    velocidadmasbaja=0
-    tipocombustible="solido","liquido";
-    bandera=0
-    velocidadmas100=0
+    tipo_combustible=0;
+    vehiculos=0;
+    tipo_combustible="s","l";
 
-    while(cantidaddeautos<5)
+    while(vehiculos<5) 
     {
-        tipocombustible=prompt("ingrese el tipo de combustible, si es solido /s/ si es liquido /l/");
-        velocidadkm=prompt("ingrese la velocidad en km");
+        velocidadkm=prompt("ingrese la velocidad");
         velocidadkm=parseInt(velocidadkm);
-
-        if(velocidadkm>0 && velocidadkm<250)
+        while(velocidadkm<0 || velocidadkm>250)
         {
-            switch (tipocombustible) {
-                case "s":
-                velocidadalta=velocidadalta+velocidadkm
-
-                case "l":
-                if(velocidadkm>100)
-                {
-                    velocidadmas100=velocidadkm
-                    velocidadmas100=velocidadmas100+1
-                }
-                    break;
-            
-                default:
-                    break;
-            }
-            if(bandera==0)
-		 {
-			 velocidadmasbaja=velocidadkm;
-			 bandera=1;
-		 }else
-		 {
-			if( velocidadkm<velocidadmasbaja)
-			{
-				velocidadmasbaja=velocidadkm;
-			}
-		 }
-
-         cantidaddeautos=cantidaddeautos+1;
-            
+            velocidadkm=prompt("velocidad invalida, ingrese nuevamente la velocidad");  //validacion
         }
+        tipo_combustible=prompt("ingrese su tipo de combustible /s/ /l/");
+        while(tipo_combustible!="s" && tipo_combustible!="l")
+        {
+            tipo_combustible=prompt("combustible invalido, ingrese nuevamente ");
+        }
+        if(velocidadkm>=0)
+        {
+            sumadevelocidades=sumadevelocidades+velocidadkm;
+        }
+        if(bandera==0)
+        {
+            velocidad_baja=velocidadkm;
+            combustiblemin=tipo_combustible;
+            bandera=1
+        }
+        else
+        if(velocidadkm<velocidad_baja)
+        {
+            velocidad_baja=velocidadkm;
+            combustiblemin=tipo_combustible;
+        }
+        if(tipo_combustible=="l" && velocidadkm>100)
+        {
+            contador_combustible=contador_combustible+1
 
-    
-        promediototal=velocidadkm/cantidaddeautos
-
+        }
+        if(velocidadkm>velocidadalta && tipo_combustible=="s")
+        {
+            velocidadalta=velocidadkm;
         }
 
 
-        alert("el promedio total de las velocidades es " +promediototal)
-        alert("la velocidad mas baja es de " +velocidadmasbaja+ " y su combustible es " +tipocombustible)
-        alert("la cantidad de combustibles liquidos que su velocidad supere los 100 kilometros " +velocidadmas100)
-        alert("la velocidad mas alta de los combustibles solidos " +velocidadalta)
+        
+        vehiculos++;
+
     }
+    
+    promedio=sumadevelocidades/5;
+
+
+
+
+alert("el promedio es "+promedio);
+alert("la velocidad mas baja es " +velocidad_baja+ "y su combustible es " +combustiblemin);
+alert("cantidad de combustibles liquidos que superan 100 km " +contador_combustible)
+alert("la velocidad mas alta del combustible solido es " +velocidadalta)
+
+}
     
 
     

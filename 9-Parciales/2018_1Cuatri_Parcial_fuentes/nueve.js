@@ -16,17 +16,22 @@ function mostrar()
     var promedio;
     var pesomax;
     var pesomin;
-    var flagpesomax=false
-    var contadortepmmenos0=0;
-    var contadorpeso=0;
-    var acumuladorpeso=0;
-    var maxmarca=0;
-   
-   
+    var flagpesomax=false;
+    var contadortepmmenos0;
+    var contadorpeso;
+    var acumuladorpeso;
+    var marcamaxima;
+    var flagpesomin=false;
+    var sumapeso=0
+
     pesomin=0
     contadordetemp=0
     pesomax=0
     respuesta="s"
+    contadorpeso=0
+    acumuladorpeso=0
+    marcamaxima=0
+    contadortepmmenos0=0
 
 
 
@@ -34,52 +39,55 @@ function mostrar()
     {
         marca=prompt("ingrese marca");
         peso=prompt("ingrese peso");
+        temperatura=prompt("ingrese temperatura")
+        peso=parseInt(peso);
+        temperatura=parseInt(temperatura);
+        /*validacion*/
         while(peso<1 || peso >100)
         {
             peso=prompt("ingrese nuevamente el peso");
         /*validacion*/
         }
-        temperatura=prompt("ingrese temperatura")
         while(temperatura<-30||temperatura>30)
         {
             temperatura=prompt("ingrese nuevamente la temperatura");
         }
-        /*validacion*/
         if(temperatura % 2 == 0)
         {
             contadordetemp=contadordetemp+1
         }
+
+
         if(flagpesomax==false || peso>pesomax)
         {
-            pesomax=marca;
             pesomax=peso;
+            marcamaxima=marca;
             flagpesomax=true;
         }
-        if(flagpesomax==false|| peso<pesomin)
+        if(flagpesomin==false|| peso<pesomin)
         {
             pesomin=peso;
-            flagpesomax=true
+            flagpesomin=true;
         }
         if(temperatura<0)
         {
             contadortepmmenos0++;
         }
-        contadorpeso++;
-        acumuladorpeso++;
-
-
-
-
-
-
-
+        contadorpeso=contadorpeso+1;
+        
         respuesta=prompt("ingrese no para salir");
+        sumapeso=sumapeso+peso;
+        acumuladorpeso=acumuladorpeso+1;
+        
     }
-    promedio=acumuladorpeso/contadorpeso
+        promedio=sumapeso/acumuladorpeso;
+
+
+
         
 document.write(" cantidad de temperaturas pares "+contadordetemp)
-document.write(" el producto maximo es" +maxmarca)
-document.write(" cantidad de productos a menos de 0" +contadortepmmenos0)
+document.write(" la marca del producto mas pesado es " +marcamaxima)
+document.write(" cantidad de productos a menos de cero grados es " +contadortepmmenos0)
 document.write(" el promedio total es " +promedio)
 document.write(" el maximo peso es " +pesomax+ " y el minimo es " +pesomin)
 

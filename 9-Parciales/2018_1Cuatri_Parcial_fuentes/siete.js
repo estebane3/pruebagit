@@ -1,45 +1,29 @@
 function mostrar()
+
+//Realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10) ,
+// el sexo (validar el sexo “f” o “m”) de 5 alumnos, informar por alert: 
+//a) El promedio de las notas totales. 
+//b) La nota más baja y el sexo de esa persona. 
+//c) La cantidad de varones que su nota haya sido mayor o igual a 6.
 {
-    var notas;
-    var cantidaddenotas
-    var sexo;
-    var promedionotas;
-    var cantidaddealumnos;
-    var varonesaprobados;
+    var velocidadkm;
+    var tipo_combustible;
+    var vehiculos;
 
-    notas=0
-    sexo= "femenino","masculino"
-    promedionotas=0
-    cantidaddenotas=0
-    varonesaprobados=0
-    cantidaddealumnos=0
+    tipo_combustible="s","l"
 
-    while(cantidaddealumnos<5)
+    while (vehiculos<5) 
     {
-        notas=prompt("ingrese notas");
-        sexo=prompt("ingresar el sexo ");
-        notas=parseInt(notas);
-
-
-        if(notas>=6 && sexo=="m"){
-            varonesaprobados=varonesaprobados+1
-            
-            notas=notas+1;
-        }
-        if(notas<6){
-            notas=notas+1;
-
-        }
-        if(cantidaddenotas>=6)
+        velocidadkm=prompt("ingrese la velocidad");
+        while(velocidadkm<0 || velocidadkm>250)
         {
-            cantidaddenotas=cantidaddenotas+1
+            velocidadkm=prompt("velocidad invalida, ingrese nuevamente la velocidad");  //validacion
         }
-
-        cantidaddealumnos=cantidaddealumnos+1
+        tipo_combustible=prompt("ingrese su tipo de combustible /s/ /l/");
+        while(tipo_combustible!="s" && tipo_combustible!="l")
+        {
+            tipo_combustible=prompt("combustible invalido, ingrese nuevamente ");
+        }
+        vehiculos++;
     }
-    promedionotas=notas/cantidaddenotas
- 
-    alert("el promedio de las notas es " +promedionotas)
-    alert("la nota mas baja es " +notas+ " y su sexo es " +sexo)
-    alert("cantidad de varones aprobados " +varonesaprobados)
 }
